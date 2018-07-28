@@ -19,6 +19,7 @@ public class GameManager3 : MonoBehaviour
     private void Start()
     {
         FindObjectOfType<AudioManager>().Play("BackgroundMusic");
+        startMenuUI.SetActive(true);
     }
 
     private void Update()
@@ -28,11 +29,6 @@ public class GameManager3 : MonoBehaviour
             scoreUI.SetActive(true);
             startMenuUI.SetActive(false);
         }
-        else
-        {
-            scoreUI.SetActive(false);
-            startMenuUI.SetActive(true);
-        }
     }
 
     public void LoadGameMenu()
@@ -40,7 +36,6 @@ public class GameManager3 : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameHasStarted = false;
         gameHasEnded = false;
-        startMenuUI.SetActive(true);
     }
 
     public void Restart()
@@ -55,9 +50,10 @@ public class GameManager3 : MonoBehaviour
     {
         gameStartedTime = Time.time;
         gameHasStarted = true;
+        gameHasEnded = false;
 
         FindObjectOfType<AudioManager>().Play("Wind");
-        startMenuUI.SetActive(false);
+        Invoke("DisableMenuStart", 2);
     }
 
     public void EndGame()
@@ -73,13 +69,7 @@ public class GameManager3 : MonoBehaviour
             gameHasEnded = true;
 
             Debug.Log("GAME OVER!");
-            TryAgain();
-            //Invoke("Restart", restartDelay);
+            tryAgainUI.SetActive(true);
         }
-    }
-
-    void TryAgain()
-    {
-        tryAgainUI.SetActive(true);
     }
 }
