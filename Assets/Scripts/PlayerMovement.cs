@@ -119,10 +119,10 @@ public class PlayerMovement : MonoBehaviour
                 Down();
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Jump();
-            }
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    Jump();
+            //}
 
             if (rigidbody.position.y < -1)
             {
@@ -143,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
         rigidbody.AddForce(0, -downForce * Time.deltaTime, 0, ForceMode.VelocityChange);
     }
 
-    void Jump()
+    public void Jump()
     {
         rigidbody.AddForce(0, jump, 0, ForceMode.Impulse);
     }

@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class GameManager3 : MonoBehaviour
 {
+    public SettingsMenu settingsMenu;
+
     public float restartDelay;
     public GameObject tryAgainUI;
     public GameObject startMenuUI;
     public GameObject scoreUI;
+    public GameObject gui;
+    public GameObject JumpBar;
 
     public GameObject player;
     public GameObject levelManager;
@@ -20,6 +25,9 @@ public class GameManager3 : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("BackgroundMusic");
         startMenuUI.SetActive(true);
+
+        settingsMenu.LoadSettingFromJSON();
+        settingsMenu.LoadGraphicsSettingsFromJSON();
     }
 
     private void Update()
@@ -54,6 +62,7 @@ public class GameManager3 : MonoBehaviour
 
         FindObjectOfType<AudioManager>().Play("Wind");
         Invoke("DisableMenuStart", 2);
+        gui.SetActive(true);
     }
 
     public void EndGame()
@@ -66,10 +75,13 @@ public class GameManager3 : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("PlayerDeath");
 
             scoreUI.GetComponent<Animator>().SetTrigger("IsEnded");
+            JumpBar.GetComponent<Animator>().SetTrigger("IsEnded");
             gameHasEnded = true;
 
             Debug.Log("GAME OVER!");
             tryAgainUI.SetActive(true);
         }
     }
+
+    
 }
