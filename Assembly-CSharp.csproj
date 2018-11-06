@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\EndTrigger.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GameManager3.cs" />
+    <Compile Include="Assets\Scripts\JumpBar.cs" />
     <Compile Include="Assets\Scripts\LevelComplete.cs" />
     <Compile Include="Assets\Scripts\LevelInfinityGenerator.cs" />
     <Compile Include="Assets\Scripts\LevelsMenu.cs" />
@@ -76,6 +77,8 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerPlatform.cs" />
     <Compile Include="Assets\Scripts\ScoreCounter.cs" />
+    <Compile Include="Assets\Scripts\SettingsMenu.cs" />
+    <Compile Include="Assets\Scripts\SliderPercent.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>G:/♥Polski♦Anglik♥/Obróbka Cyfrowa/Unity/Roll a ball/HowToMakeAVideoGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

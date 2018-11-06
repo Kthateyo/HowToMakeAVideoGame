@@ -106,10 +106,17 @@ MonoBehaviour:
     y: 30
     width: 2560
     height: 1307
+<<<<<<< HEAD
   m_MinSize: {x: 683, y: 342}
   m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
   controlID: 53
+=======
+  m_MinSize: {x: 583, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
+  vertical: 0
+  controlID: 13
+>>>>>>> Adding-Options-Menu
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +137,17 @@ MonoBehaviour:
     y: 0
     width: 1905
     height: 1307
+<<<<<<< HEAD
   m_MinSize: {x: 406, y: 342}
   m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
   controlID: 54
+=======
+  m_MinSize: {x: 306, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
+  vertical: 1
+  controlID: 14
+>>>>>>> Adding-Options-Menu
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +168,17 @@ MonoBehaviour:
     y: 0
     width: 1905
     height: 805
+<<<<<<< HEAD
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
   controlID: 55
+=======
+  m_MinSize: {x: 306, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
+  vertical: 0
+  controlID: 15
+>>>>>>> Adding-Options-Menu
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,8 +197,13 @@ MonoBehaviour:
     y: 0
     width: 269
     height: 805
+<<<<<<< HEAD
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
+=======
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> Adding-Options-Menu
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -201,6 +227,7 @@ MonoBehaviour:
     y: 0
     width: 1636
     height: 805
+<<<<<<< HEAD
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 18}
@@ -211,6 +238,18 @@ MonoBehaviour:
   - {fileID: 19}
   m_Selected: 0
   m_LastSelected: 2
+=======
+  m_MinSize: {x: 104, y: 121}
+  m_MaxSize: {x: 4004, y: 4021}
+  m_ActualView: {fileID: 12}
+  m_Panes:
+  - {fileID: 18}
+  - {fileID: 19}
+  - {fileID: 13}
+  - {fileID: 12}
+  m_Selected: 3
+  m_LastSelected: 0
+>>>>>>> Adding-Options-Menu
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -229,17 +268,28 @@ MonoBehaviour:
     y: 805
     width: 1905
     height: 502
+<<<<<<< HEAD
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 21}
+=======
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 20}
+>>>>>>> Adding-Options-Menu
   m_Panes:
   - {fileID: 20}
   - {fileID: 21}
   - {fileID: 22}
   - {fileID: 16}
   - {fileID: 15}
+<<<<<<< HEAD
   m_Selected: 1
   m_LastSelected: 0
+=======
+  m_Selected: 0
+  m_LastSelected: 2
+>>>>>>> Adding-Options-Menu
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -949,7 +999,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: f2e3fcff7a9efeff8841ffffe6fbffff000000007810000058110000b0110000306a0000c46a0000dab70000
+=======
+    m_ExpandedIDs: e6fbffff00000000
+>>>>>>> Adding-Options-Menu
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1086,7 +1140,28 @@ MonoBehaviour:
     - {fileID: 1107969370932610940, guid: 3041ce08157e67d4f8188e2db5f82c15, type: 2}
     - {fileID: 1107961547442866198, guid: 97d0e30bfead20248bca6d4a8d56f209, type: 2}
     - {fileID: 1107930063283241690, guid: d74905a39ca1d0e4095ab8a91e319d4e, type: 2}
+<<<<<<< HEAD
     m_ValueSerializationHelper:
+=======
+    - {fileID: 1107150961088664298, guid: 7cb4018d94ff6cc4989b09657c7b46a9, type: 2}
+    m_ValueSerializationHelper:
+    - e00: 0.43263158
+      e01: 0
+      e02: 0
+      e03: -6.6315765
+      e10: 0
+      e11: 0.43263158
+      e12: 0
+      e13: 268.9
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+>>>>>>> Adding-Options-Menu
     - e00: 1
       e01: 0
       e02: 0
@@ -1106,11 +1181,19 @@ MonoBehaviour:
     - e00: 1
       e01: 0
       e02: 0
+<<<<<<< HEAD
       e03: 31
       e10: 0
       e11: 1
       e12: 0
       e13: 279.5
+=======
+      e03: 32
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 277.5
+>>>>>>> Adding-Options-Menu
       e20: 0
       e21: 0
       e22: 1
@@ -1119,6 +1202,7 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+<<<<<<< HEAD
     - e00: 1
       e01: 0
       e02: 0
@@ -1142,6 +1226,15 @@ MonoBehaviour:
       e10: 0
       e11: 0.34136212
       e12: 0
+=======
+    - e00: 0.34136212
+      e01: 0
+      e02: 0
+      e03: 84.63788
+      e10: 0
+      e11: 0.34136212
+      e12: 0
+>>>>>>> Adding-Options-Menu
       e13: 297.3696
       e20: 0
       e21: 0
@@ -1191,6 +1284,25 @@ MonoBehaviour:
       e11: 1
       e12: 0
       e13: 289.5
+<<<<<<< HEAD
+=======
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 32
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 283.5
+>>>>>>> Adding-Options-Menu
       e20: 0
       e21: 0
       e22: 1
@@ -1250,11 +1362,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Animation
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
   - Assets/Animation
+=======
+    - Assets
+  m_ViewMode: 1
+  m_StartGridSize: 96
+  m_LastFolders:
+  - Assets
+>>>>>>> Adding-Options-Menu
   m_LastFoldersGridSize: 96
   m_LastProjectPath: "G:\\\u2665Polski\u2666Anglik\u2665\\Obr\xF3bka Cyfrowa\\Unity\\Roll
     a ball\\HowToMakeAVideoGame"
@@ -1262,8 +1382,13 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: be090000
     m_LastClickedID: 2494
+=======
+    m_SelectedIDs: 88090000
+    m_LastClickedID: 2440
+>>>>>>> Adding-Options-Menu
     m_ExpandedIDs: 00000000880900009c09000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1317,9 +1442,15 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 3c100000
     m_LastClickedInstanceID: 4156
     m_HadKeyboardFocusLastEvent: 1
+=======
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+>>>>>>> Adding-Options-Menu
     m_ExpandedInstanceIDs: c6230000a8f8f7ff9e69000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1400,7 +1531,11 @@ MonoBehaviour:
   m_AnimEditor: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
+<<<<<<< HEAD
   m_LastSelectedObjectID: 4528
+=======
+  m_LastSelectedObjectID: -427254
+>>>>>>> Adding-Options-Menu
 --- !u!114 &23
 MonoBehaviour:
   m_ObjectHideFlags: 52

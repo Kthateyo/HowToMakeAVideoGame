@@ -1,37 +1,36 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class GameManager3 : MonoBehaviour
 {
-    public float restartDelay;
+    public SettingsMenu settingsMenu;
+    
     public GameObject tryAgainUI;
     public GameObject startMenuUI;
-    public GameObject scoreUI;
-
-    public GameObject player;
-    public GameObject levelManager;
+    public GameObject gui;
+    public Animator ScoreUI;
+    public Animator JumpBar;
 
     public static bool gameHasEnded = false;
-
     public static bool gameHasStarted = false;
     public static float gameStartedTime;
 
     private void Start()
     {
         FindObjectOfType<AudioManager>().Play("BackgroundMusic");
+        startMenuUI.SetActive(true);
+
+        settingsMenu.LoadSettingFromJSON();
+        settingsMenu.LoadGraphicsSettingsFromJSON();
     }
 
     private void Update()
     {
         if (gameHasStarted)
         {
-            scoreUI.SetActive(true);
+            gui.SetActive(true);
             startMenuUI.SetActive(false);
-        }
-        else
-        {
-            scoreUI.SetActive(false);
-            startMenuUI.SetActive(true);
         }
     }
 
@@ -40,7 +39,6 @@ public class GameManager3 : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gameHasStarted = false;
         gameHasEnded = false;
-        startMenuUI.SetActive(true);
     }
 
     public void Restart()
@@ -55,9 +53,10 @@ public class GameManager3 : MonoBehaviour
     {
         gameStartedTime = Time.time;
         gameHasStarted = true;
-
+        gameHasEnded = false;
+        gui.SetActive(true);
+        JumpBar.SetBool("Play", true);
         FindObjectOfType<AudioManager>().Play("Wind");
-        startMenuUI.SetActive(false);
     }
 
     public void EndGame()
@@ -69,17 +68,12 @@ public class GameManager3 : MonoBehaviour
 
             FindObjectOfType<AudioManager>().Play("PlayerDeath");
 
-            scoreUI.GetComponent<Animator>().SetTrigger("IsEnded");
+            ScoreUI.GetComponent<Animator>().SetTrigger("IsEnded");
+            JumpBar.SetBool("Play", false);
             gameHasEnded = true;
 
             Debug.Log("GAME OVER!");
-            TryAgain();
-            //Invoke("Restart", restartDelay);
+            tryAgainUI.SetActive(true);
         }
-    }
-
-    void TryAgain()
-    {
-        tryAgainUI.SetActive(true);
     }
 }

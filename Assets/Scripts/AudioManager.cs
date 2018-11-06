@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour {
-
+        
     public Sound[] sounds;
 
     private void Awake()
@@ -15,7 +16,7 @@ public class AudioManager : MonoBehaviour {
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
-
+            s.source.outputAudioMixerGroup = s.audioMixerGroup;
         }
     }
 
