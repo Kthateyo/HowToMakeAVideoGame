@@ -3,7 +3,6 @@
 public class PlayerCollision : MonoBehaviour {
 
     public PlayerMovement movement;
-
     public Transform floor;
     public Collision collision;
     
@@ -22,7 +21,5 @@ public class PlayerCollision : MonoBehaviour {
             this.collision = collision;
             floor = collision.transform;
         }
-
     }
-    
 }

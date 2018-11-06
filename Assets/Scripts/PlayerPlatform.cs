@@ -3,11 +3,10 @@
 public class PlayerPlatform : MonoBehaviour {
 
     public Transform player;
-    public float distanceBetweenGroungAndPlayer = 0.01f;
-
     public PlayerCollision playerCollision;
-
-    float lastX, lastY = 0.01f, lastZ;
+    public float distanceBetweenGroungAndPlayer = 0.01f;
+    
+    float lastX, lastZ;
 
     private void FixedUpdate()
     {
@@ -19,7 +18,6 @@ public class PlayerPlatform : MonoBehaviour {
         float x = player.position.x;
 
         x = (x < -7) ? -7 : player.position.x;
-
         x = (x > 7) ? 7 : x;
 
         return x;
@@ -27,9 +25,8 @@ public class PlayerPlatform : MonoBehaviour {
 
     Vector3 PlayerPlatformPosition()
     {
-        float x = lastX, y = lastY, z = lastZ;
+        float x = lastX, z = lastZ;
         
-
         if (!(playerCollision.floor.Equals(null)) && !(playerCollision.collision.gameObject.Equals(null)))
         {
             x = player.position.x;
@@ -41,11 +38,6 @@ public class PlayerPlatform : MonoBehaviour {
             z = (z > playerCollision.floor.position.z + (playerCollision.floor.lossyScale.z / 2) - 0.5f) ? playerCollision.floor.position.z + (playerCollision.floor.lossyScale.z / 2) - 0.5f : z;
             lastZ = z;
         }
-        
-
-        
-
         return new Vector3(x,distanceBetweenGroungAndPlayer,z);
     }
-    
 }

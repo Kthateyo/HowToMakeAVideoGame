@@ -5,19 +5,14 @@ using System.IO;
 public class GameManager3 : MonoBehaviour
 {
     public SettingsMenu settingsMenu;
-
-    public float restartDelay;
+    
     public GameObject tryAgainUI;
     public GameObject startMenuUI;
-    public GameObject scoreUI;
     public GameObject gui;
-    public GameObject JumpBar;
-
-    public GameObject player;
-    public GameObject levelManager;
+    public Animator ScoreUI;
+    public Animator JumpBar;
 
     public static bool gameHasEnded = false;
-
     public static bool gameHasStarted = false;
     public static float gameStartedTime;
 
@@ -34,7 +29,7 @@ public class GameManager3 : MonoBehaviour
     {
         if (gameHasStarted)
         {
-            scoreUI.SetActive(true);
+            gui.SetActive(true);
             startMenuUI.SetActive(false);
         }
     }
@@ -59,10 +54,9 @@ public class GameManager3 : MonoBehaviour
         gameStartedTime = Time.time;
         gameHasStarted = true;
         gameHasEnded = false;
-
-        FindObjectOfType<AudioManager>().Play("Wind");
-        Invoke("DisableMenuStart", 2);
         gui.SetActive(true);
+        JumpBar.SetBool("Play", true);
+        FindObjectOfType<AudioManager>().Play("Wind");
     }
 
     public void EndGame()
@@ -74,14 +68,12 @@ public class GameManager3 : MonoBehaviour
 
             FindObjectOfType<AudioManager>().Play("PlayerDeath");
 
-            scoreUI.GetComponent<Animator>().SetTrigger("IsEnded");
-            JumpBar.GetComponent<Animator>().SetTrigger("IsEnded");
+            ScoreUI.GetComponent<Animator>().SetTrigger("IsEnded");
+            JumpBar.SetBool("Play", false);
             gameHasEnded = true;
 
             Debug.Log("GAME OVER!");
             tryAgainUI.SetActive(true);
         }
     }
-
-    
 }
