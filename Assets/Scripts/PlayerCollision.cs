@@ -5,7 +5,12 @@ public class PlayerCollision : MonoBehaviour {
     public PlayerMovement movement;
     public Transform floor;
     public Collision collision;
-    
+
+    private void Start()
+    {
+        floor = GameObject.Find("StartPlatform").GetComponent<Transform>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "Obstacle")

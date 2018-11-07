@@ -151,7 +151,7 @@ public class LevelInfinityGenerator : MonoBehaviour
 
     void DeleteProcedural()
     {
-        if (platforms[0].transform.position.z < player.position.z - 100)
+        if (platforms[0].transform.position.z < player.position.z - 500)
         {
             Destroy(platforms[0], 0.5f);
             platforms.RemoveAt(0);

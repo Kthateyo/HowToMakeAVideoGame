@@ -293,6 +293,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 175834957}
   m_Script: {fileID: 11500000, guid: cc60d70a1c2bfb4429e7c7a9faa72b24, type: 3}
+--- !u!114 &60176643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114929861449514704, guid: 3ed30ceb506e3854a90bfffb583f510e,
+    type: 2}
+  m_PrefabInternal: {fileID: 175834957}
+  m_Script: {fileID: 11500000, guid: 7d339ece3b59c624c94751fb2cb19157, type: 3}
 --- !u!95 &60176647
 Animator:
   serializedVersion: 3
@@ -792,17 +798,17 @@ Prefab:
     - target: {fileID: 114929861449514704, guid: 3ed30ceb506e3854a90bfffb583f510e,
         type: 2}
       propertyPath: maxforwardForce
-      value: 10000
+      value: 9000
       objectReference: {fileID: 0}
     - target: {fileID: 54698987604791356, guid: 3ed30ceb506e3854a90bfffb583f510e,
         type: 2}
       propertyPath: m_CollisionDetection
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114929861449514704, guid: 3ed30ceb506e3854a90bfffb583f510e,
         type: 2}
       propertyPath: downForce
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114929861449514704, guid: 3ed30ceb506e3854a90bfffb583f510e,
         type: 2}
@@ -813,6 +819,15 @@ Prefab:
         type: 2}
       propertyPath: jump
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118573744475828, guid: 3ed30ceb506e3854a90bfffb583f510e, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 54698987604791356, guid: 3ed30ceb506e3854a90bfffb583f510e,
+        type: 2}
+      propertyPath: m_Interpolate
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ed30ceb506e3854a90bfffb583f510e, type: 2}
@@ -1225,6 +1240,11 @@ MonoBehaviour:
   gui: {fileID: 1779595421}
   ScoreUI: {fileID: 1921584071}
   JumpBar: {fileID: 1089726377}
+  SmoothPlayerReturn: 2.5
+  Player: {fileID: 60176641}
+  playerMovement: {fileID: 60176643}
+  playerCollision: {fileID: 60176642}
+  ChaoticCubeRotating: 0
 --- !u!1 &283026584
 GameObject:
   m_ObjectHideFlags: 0
@@ -5014,6 +5034,7 @@ MonoBehaviour:
   - {fileID: 1468428376940956, guid: db82caef79a23e24da1e1565041de791, type: 2}
   - {fileID: 1336127635646746, guid: 9ee9c8d1cb4950042aa36f4f2d714c7a, type: 2}
   - {fileID: 1712137025270816, guid: 2d5b9af9cbab9384fbe2848d9bbf99ed, type: 2}
+  - {fileID: 1995713294396582, guid: 566aa364889e49a4eb1d6c5c3e221195, type: 2}
 --- !u!1 &980213075
 GameObject:
   m_ObjectHideFlags: 0
@@ -5928,7 +5949,7 @@ RectTransform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1123338806}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0000178, y: 1.0000178, z: 1.0000178}
   m_Children:
@@ -5938,7 +5959,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20, y: -20}
+  m_AnchoredPosition: {x: -12, y: -10}
   m_SizeDelta: {x: 159.5, y: 52}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1123338808
@@ -9297,8 +9318,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 280417076}
-        m_MethodName: LoadGameMenu
-        m_Mode: 1
+        m_MethodName: RestartNoLoad
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9592,7 +9613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1845942052
 Animator:
   serializedVersion: 3
@@ -9619,7 +9640,7 @@ RectTransform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845942051}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11802,26 +11823,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 280417076}
-        m_MethodName: LoadGameMenu
-        m_Mode: 1
+        m_MethodName: RestartNoLoad
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 280417076}
-        m_MethodName: StartGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null

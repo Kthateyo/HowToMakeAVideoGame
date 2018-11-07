@@ -14,7 +14,7 @@ public class ScoreCounter : MonoBehaviour {
 
     void Update ()
     {
-        int score = (int) (player.position.z * multiply);
+        int score = (int) ((player.position.z - GameManager3.SubstractFromScore) * multiply);
         text.text = score.ToString();
 
 

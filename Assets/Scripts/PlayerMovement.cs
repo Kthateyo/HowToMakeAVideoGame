@@ -2,10 +2,10 @@
 
 public class PlayerMovement : MonoBehaviour
 {
-
     Animator anim;
 
     public float jump = 50f;
+    public float ForwardStartForce = 6000;
     public float forwardForce = 1000;
     public float maxforwardForce = 1000;
     public float sidewaysForce = 1000;
@@ -37,11 +37,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         Movement();
-
-
     }
-
-
+    
     void Movement()
     {
         if (GameManager3.gameHasStarted == true)
@@ -69,22 +66,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             ///////////////////////////
-
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                DashLeft();
-            }
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                DashRight();
-            }
-
-            if (afterDash == true && (transform.position.x < vectorAtDash.x - whenStopDash || transform.position.x > vectorAtDash.x + whenStopDash))
-            {
-                StopDash();
-            }
-
+            
             if (Input.GetKey(KeyCode.A))
             {
                 MoveLeft();
@@ -94,35 +76,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 MoveRight();
             }
-            /*
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-
-                if (Time.time - czasPierwszegoKliknięcia < masksymalnyCzasPomiędzyKliknięciami)
-                {
-                    DashLewo();
-                }
-
-
-                czasPierwszegoKliknięcia = Time.time;
-            }
-
-            if (poDashu == true && transform.position.x < pozycjaPodczasDashu.x - 10)
-            {
-                WychamowanieDashuLewo();
-            }
-            */
-            ///////////////////////////
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 Down();
             }
-
-            //if (Input.GetKeyDown(KeyCode.Space))
-            //{
-            //    Jump();
-            //}
 
             if (rigidbody.position.y < -1)
             {
@@ -157,33 +115,10 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidbody.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
     }
-    
-    void DashLeft()
+
+    public void RandomRotatePlayer(float min, float max, ForceMode mode)
     {
-        //rigidbody.MovePosition(new Vector3(transform.position.x - 5, transform.position.y, transform.position.z));
-        //transform.TransformDirection(new Vector3(transform.position.x - 5, transform.position.y, transform.position.z));
-        //transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x - 5, transform.position.y, transform.position.z), 10f);
-
-        //afterDash = true;
-        //vectorAtDash = transform.position;
-        //rigidbody.AddForce(-sidewaysDash, 0, 0, ForceMode.VelocityChange);
-    }
-
-    void DashRight()
-    {
-        //rigidbody.MovePosition(new Vector3(transform.position.x + 5, transform.position.y, transform.position.z));
-        //transform.TransformDirection(new Vector3(transform.position.x + 5, transform.position.y, transform.position.z));
-        //transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x + 5, transform.position.y, transform.position.z), 10f);
-
-        //afterDash = true;
-        //vectorAtDash = transform.position;
-        //rigidbody.AddForce(sidewaysDash, 0, 0, ForceMode.VelocityChange);
-    }
-
-    void StopDash()
-    {
-        afterDash = false;
-        rigidbody.AddForce(-(rigidbody.velocity.x), 0, 0, ForceMode.VelocityChange);
+        rigidbody.AddTorque(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max), mode);
     }
 }
 
