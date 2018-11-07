@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 20880635955251074}
   - component: {fileID: 81605638088801480}
   - component: {fileID: 114980630269448510}
+  - component: {fileID: 95899283873423994}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,13 +36,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484063460684130}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.25, z: -5}
+  m_LocalRotation: {x: -0.052072108, y: -0, z: 0.000000022351742, w: 0.9986434}
+  m_LocalPosition: {x: 0.08, y: 1.84, z: -4.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -64.28001, y: -12.462001, z: -19.722}
 --- !u!20 &20880635955251074
 Camera:
   m_ObjectHideFlags: 1
@@ -89,6 +90,24 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484063460684130}
   m_Enabled: 1
+--- !u!95 &95899283873423994
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484063460684130}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95bf24ed7141f14468741ff29cf6daf5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114980630269448510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,7 +120,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  offset: {x: 0, y: 1.5, z: -5}
+  cameraQuaternion: {x: 30, y: 0, z: 0, w: 0}
   smooth: 0.5
-  offset: {x: 0, y: 1, z: -5}
-  offsetMenu: {x: 0, y: 2, z: -5}
-  rotationMenu: {x: 0, y: 0, z: 0, w: 0}
+  jumpOffset: {x: 0, y: 6, z: -8}
+  jumpQuaternion: {x: 20, y: 0, z: 0, w: 360}
+  offsetMenu: {x: 0, y: -0.4, z: -5}
+  rotationMenu: {x: -20, y: 0, z: 0, w: 360}
+  smoothAtStart: 1
+  timeProgress: 0.5
